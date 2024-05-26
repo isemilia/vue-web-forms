@@ -15,10 +15,28 @@
         <option value="designer">Designer</option>
       </select>
     </label>
-    <div class="terms">
+    <div class="checkbox-input">
       <label>
         <input type="checkbox" required v-model="terms">
         Accept terms and conditions
+      </label>
+    </div>
+    <div class="checkbox-input">
+      <label>
+        Anna
+        <input type="checkbox" value="anna" v-model="names">
+      </label>
+    </div>
+    <div class="checkbox-input">
+      <label>
+        John
+        <input type="checkbox" value="john" v-model="names">
+      </label>
+    </div>
+    <div class="checkbox-input">
+      <label>
+        Maria
+        <input type="checkbox" value="maria" v-model="names">
       </label>
     </div>
   </form>
@@ -26,6 +44,7 @@
   <p>{{password}}</p>
   <p>{{role}}</p>
   <p>{{terms}}</p>
+  <p>{{names}}</p>
 </template>
 
 <script>
@@ -35,7 +54,8 @@ export default {
       password: '',
       email: '',
       role: 'designer',
-      terms: false
+      terms: false,
+      names: []
     }
   }
 }
@@ -71,13 +91,13 @@ input, select {
   color: #555;
 }
 
-.terms input[type=checkbox] {
+.checkbox-input input[type=checkbox] {
   display: inline;
   width: auto;
   padding: 0;
   margin: 0;
 }
-.terms label{
+.checkbox-input label{
   display: flex;
   align-items: center;
   gap: 8px;
