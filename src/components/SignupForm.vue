@@ -8,8 +8,16 @@
       Password:
       <input type="password" required v-model="password">
     </label>
+    <label>
+      Role:
+      <select name="role" v-model="role">
+        <option value="developer">Developer</option>
+        <option value="designer">Designer</option>
+      </select>
+    </label>
     <p>{{email}}</p>
     <p>{{password}}</p>
+    <p>{{role}}</p>
   </form>
 </template>
 
@@ -18,7 +26,8 @@ export default {
   data() {
     return {
       password: '',
-      email: ''
+      email: '',
+      role: 'designer',
     }
   }
 }
@@ -43,7 +52,7 @@ label {
   font-weight: bold;
   width: 100%;
 }
-input {
+input, select {
   margin-top: 5px;
   display: block;
   padding: 10px 6px;
